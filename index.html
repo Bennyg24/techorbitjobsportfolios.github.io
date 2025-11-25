@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analyst Portfolio - [Sarah]</title>
+    
+    <style>
+        /* --- Global Styles --- */
+        :root {
+            --primary-color: #3f51b5; /* Indigo Blue */
+            --secondary-color: #f5f5f5; /* Light Gray */
+            --text-color: #333;
+            --white: #ffffff;
+            --dark-grey: #555;
+            --light-blue: #e0e7fa; /* Lighter shade of primary for accents */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: var(--white);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+
+        .section {
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+        }
+
+        /* --- Navigation --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background: var(--white);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li a {
+            margin-left: 25px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #536dfe; /* Lighter shade on hover */
+        }
+
+        /* --- Header/Hero --- */
+        header {
+            background: var(--secondary-color);
+            padding: 60px 5%; /* Adjusted padding for more content */
+            min-height: 500px; /* Increased min-height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column; /* Stack content vertically */
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%; /* Makes it circular */
+            object-fit: cover; /* Ensures image covers the area without distortion */
+            border: 5px solid var(--primary-color); /* Nice border around the pic */
+            margin-bottom: 25px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .greeting {
+            font-size: 1.2em;
+            color: var(--dark-grey);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .hero-content h1 {
+            font-size: 3em;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .hero-content h2 {
+            font-size: 1.5em;
+            color: var(--text-color);
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.1em;
+            margin-bottom: 25px;
+            color: var(--dark-grey);
+        }
+
+        .contact-info {
+            margin-top: 30px;
+            font-size: 1.05em;
+            color: var(--dark-grey);
+        }
+
+        .contact-info p {
+            margin-bottom: 8px;
+        }
+
+        .contact-info a {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 12px 30px;
+            margin-top: 25px;
+            border-radius: 5px;
+            transition: background 0.3s ease, transform 0.2s ease;
+            font-size: 1.1em;
+        }
+
+        .btn:hover {
+            background: #536dfe;
+            transform: translateY(-2px);
+        }
+
+        /* --- Skills Section --- */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px; /* Increased gap */
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .skill-card {
+            background: var(--white);
+            border: 1px solid var(--light-blue); /* Lighter blue border */
+            border-radius: 10px; /* Slightly more rounded */
+            padding: 25px;
+            width: 250px; /* Wider cards */
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08); /* Stronger shadow */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .skill-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 12px;
+            font-size: 1.4em;
+        }
+        .skill-card p {
+            color: var(--dark-grey);
+        }
+
+        /* --- Projects Section --- */
+        .projects-section {
+            background: var(--secondary-color);
+        }
+
+        .project-card {
+            background: var(--white);
+            border-radius: 10px; /* Consistent rounding */
+            padding: 35px; /* More padding */
+            margin: 25px auto;
+            max-width: 850px;
+            text-align: left;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.6em;
+        }
+        .project-card p {
+            color: var(--dark-grey);
+            margin-bottom: 20px;
+            font-size: 1.05em;
+        }
+
+        .project-links {
+            margin-top: 15px;
+        }
+
+        .project-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-right: 15px;
+            border-radius: 5px;
+            background: var(--primary-color);
+            color: var(--white);
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .project-btn:hover {
+            background: #536dfe;
+            transform: translateY(-2px);
+        }
+
+        .project-btn.secondary {
+            background: #6c757d; /* Gray color for secondary links */
+        }
+        .project-btn.secondary:hover {
+            background: #7a8288;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 30px 5%;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+
+        .social-links a {
+            color: var(--white);
+            margin: 0 12px;
+            font-weight: 500;
+            transition: text-decoration 0.3s ease;
+        }
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Media Queries (Responsiveness) --- */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                padding: 15px 3%;
+            }
+
+            nav ul {
+                margin-top: 10px;
+                padding: 0;
+                justify-content: center;
+                flex-wrap: wrap; /* Allow links to wrap */
+            }
+
+            nav ul li a {
+                margin: 5px 10px; /* Adjust margin for wrapped links */
+            }
+
+            .hero-content h1 {
+                font-size: 2.5em;
+            }
+            .hero-content h2 {
+                font-size: 1.3em;
+            }
+            .greeting {
+                font-size: 1em;
+            }
+
+            .skills-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .skill-card {
+                width: 90%; 
+            }
+
+            .project-card {
+                padding: 25px;
+            }
+            .project-card h3 {
+                font-size: 1.4em;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 1em;
+            }
+            .project-btn {
+                margin-right: 10px;
+                margin-bottom: 10px; /* For stacking on smaller screens */
+                display: block; /* Make buttons stack */
+                width: fit-content;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Sarah</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header id="about">
+        <div class="hero-content">
+            <img src="https://techorbitjobs.com/wp-content/uploads/2025/10/testimonial-2.webp" alt="Applicant Profile Picture" class="profile-pic"> 
+            
+            <p id="greeting" class="greeting"></p>
+
+            <h1>Hello, I'm Sarah</h1>
+            <h2>Data Analyst | Turning Data into Actionable Insights</h2>
+            <p>I am an analytical and detail-driven data analyst with over 8 years of experience transforming raw data into actionable insights that drive business performance. Skilled at designing efficient data models, performing advanced statistical analysis, and presenting complex findings to senior stakeholders. Highly proficient with SQL, Power BI, Excel, and Access, with a proven ability to streamline data processes, enhance data quality, and support strategic decision-making. Recognised for excellent collaboration, problem-solving, and communication skills that consistently contribute to organisational growth and compliance success.</p>
+            
+            <div class="contact-info">
+                <p><strong>Phone:</strong> +1 2228976548</p>
+                <p><strong>Email:</strong> <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+                <p><strong>LinkedIn:</strong> <a href="[Your LinkedIn URL]" target="_blank">linkedin.com/in/yourprofile</a></p>
+            </div>
+
+            <a href="https://drive.google.com/file/d/1KOJ9CPgjfgGE9r55L8YrIdSuTLwzSRxE/view?usp=sharing" class="btn" download>Download Resume</a>
+        </div>
+    </header>
+    
+    <section id="skills" class="section">
+        <h2>📊 Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>Programming</h3>
+                <p>Python (Pandas, NumPy, Scikit-learn), R (Data Manipulation, ggplot2)</p>
+            </div>
+            <div class="skill-card">
+                <h3>Databases</h3>
+                <p>SQL (PostgreSQL, MySQL, SQL Server), Database Design, ETL</p>
+            </div>
+            <div class="skill-card">
+                <h3>Visualization & BI</h3>
+                <p>Tableau, Power BI, Google Data Studio, Matplotlib, Seaborn</p>
+            </div>
+            <div class="skill-card">
+                <h3>Statistics & Modeling</h3>
+                <p>A/B Testing, Regression Analysis, Hypothesis Testing, Predictive Modeling</p>
+            </div>
+            <div class="skill-card">
+                <h3>Tools & Platforms</h3>
+                <p>Advanced Excel, Git, Jupyter Notebooks, [Cloud Platforms, e.g., AWS, GCP]</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section projects-section">
+        <h2>📁 Portfolio Projects</h2>
+
+        <div class="project-card">
+            <h3>1. E-commerce Sales Performance Dashboard (SQL & Tableau)</h3>
+            <p>Utilized advanced SQL queries to extract and transform raw sales data, then developed an interactive Tableau dashboard to monitor key sales metrics, identify regional performance disparities, and track product category trends. Delivered insights led to a 5% improvement in targeted marketing campaigns.</p>
+            <div class="project-links">
+                <a href="[Link to Tableau Public / Detailed Analysis]" target="_blank" class="project-btn">View Dashboard & Analysis</a>
+                <a href="[Link to GitHub Code]" target="_blank" class="project-btn secondary">GitHub Code</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h3>2. Customer Churn Prediction with Machine Learning (Python)</h3>
+            <p>Cleaned and preprocessed customer data using Pandas in Python. Built and evaluated machine learning models (Logistic Regression, Random Forest) to predict customer churn, achieving 85% accuracy. Provided insights into top churn drivers, enabling the marketing team to develop proactive retention strategies.</p>
+            <div class="project-links">
+                <a href="[Link to Jupyter Notebook / Blog Post]" target="_blank" class="project-btn">View Notebook & Report</a>
+                <a href="[Link to GitHub Code]" target="_blank" class="project-btn secondary">GitHub Code</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h3>3. Website Traffic & User Behavior Analysis (Google Analytics & Excel)</h3>
+            <p>Analyzed website traffic data from Google Analytics using Advanced Excel (Pivot Tables, VLOOKUP) to uncover user behavior patterns, identify popular content, and pinpoint drop-off points in the user journey. Recommendations resulted in a 10% increase in average session duration.</p>
+            <div class="project-links">
+                <a href="[Link to Analysis Report / Presentation]" target="_blank" class="project-btn">View Analysis Report</a>
+                <a href="[Link to Raw Data / Simulated Data]" target="_blank" class="project-btn secondary">Data Source (if public)</a>
+            </div>
+        </div>
+        
+    </section>
+    
+    <footer id="contact">
+        <p>Connect with me:</p>
+        <div class="social-links">
+            <a href="[Your LinkedIn URL]" target="_blank">LinkedIn</a> | 
+            <a href="[Your GitHub URL]" target="_blank">GitHub</a> | 
+            <a href="mailto:your.email@example.com">Email</a>
+        </div>
+        <p><strong>Phone:</strong> +1 2228976548</p>
+        <p>&copy; 2025 Sarah</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Smooth scrolling for navigation links
+            const navLinks = document.querySelectorAll('nav ul li a');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - document.querySelector('nav').offsetHeight,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Dynamic Greeting based on time of day
+            const greetingElement = document.getElementById('greeting');
+            const currentHour = new Date().getHours();
+            let greetingMessage;
+
+            if (currentHour < 12) {
+                greetingMessage = 'Good morning, welcome to my portfolio!';
+            } else if (currentHour < 18) {
+                greetingMessage = 'Good afternoon, welcome to my portfolio!';
+            } else {
+                greetingMessage = 'Good evening, welcome to my portfolio!';
+            }
+            greetingElement.textContent = greetingMessage;
+        });
+    </script>
+</body>
+</html>
